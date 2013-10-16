@@ -1,5 +1,5 @@
 module MythBuster
-  class Introduction
+  class Component
     def initialize(&block)
       @data = {}
       instance_eval(&block) if block
@@ -9,6 +9,12 @@ module MythBuster
       data.key?(key) ? data[key] : nil
     end
 
+    protected
+
+    attr_reader :data
+  end
+
+  class Introduction < Component
     def text(value)
       data[:text] = value
     end
@@ -20,22 +26,9 @@ module MythBuster
     def start_button_text(value)
       data[:start_button_text] = value
     end
-
-    private
-
-    attr_reader :data
   end
 
-  class Link
-    def initialize(&block)
-      @data = {}
-      instance_eval(&block) if block
-    end
-
-    def[](key)
-      data.key?(key) ? data[key] : nil
-    end
-
+  class Link < Component
     def url(value)
       data[:url] = value
     end
@@ -43,22 +36,9 @@ module MythBuster
     def text(value)
       data[:text] = value
     end
-
-    private
-
-    attr_reader :data
   end
 
-  class RelatedLinks
-    def initialize(&block)
-      @data = {}
-      instance_eval(&block) if block
-    end
-
-    def[](key)
-      data.key?(key) ? data[key] : nil
-    end
-
+  class RelatedLinks < Component
     def text(value)
       data[:text] = value
     end
@@ -67,22 +47,9 @@ module MythBuster
       data[:links] = [] unless data[:links]
       data[:links] << Link.new(&block)
     end
-
-    private
-
-    attr_reader :data
   end
 
-  class Question
-    def initialize(&block)
-      @data = {}
-      instance_eval(&block) if block
-    end
-
-    def[](key)
-      data.key?(key) ? data[key] : nil
-    end
-
+  class Question < Component
     def statement(value)
       data[:statement] = value
     end
@@ -94,10 +61,6 @@ module MythBuster
     def explanation(value)
       data[:explanation] = value
     end
-
-    private
-
-    attr_reader :data
   end
 
   class Definition
