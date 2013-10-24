@@ -1,36 +1,14 @@
-require_relative 'introduction'
-require_relative 'related_links'
-require_relative 'question'
-
 module MythBuster
-  class Definition
-    class << self
-      attr_reader :definitions
-
-      def add_definition(d)
-        (Definition.definitions ||= []) << d
-      end
-
-      protected
-
-      attr_writer :definitions
-    end
-
+  class Definition < Component
     attr_reader :title, :intro
 
     def self.define(title, &block)
-      d = Definition.new title, &block
-      add_definition d
+      MythBuster.add_definition Definition.new title, &block
     end
 
     def initialize(title, &block)
-      @data = {}
       data[:title] = title
-      instance_eval(&block) if block
-    end
-
-    def[](key)
-      data.key?(key) ? data[key] : nil
+      super &block
     end
 
     def introduction(&block)
@@ -46,8 +24,8 @@ module MythBuster
       data[:questions] << Question.new(&block)
     end
 
-    private
-
-    attr_reader :data
+    def get_binding
+      binding
+    end
   end
 end

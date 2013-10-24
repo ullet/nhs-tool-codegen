@@ -1,9 +1,7 @@
-require_relative 'component'
-
 module MythBuster
   class Introduction < Component
     def text(value)
-      data[:text] = value
+      data[:text] = strip_lines value
     end
 
     def image(value)

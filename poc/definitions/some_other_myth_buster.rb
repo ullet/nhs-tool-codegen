@@ -1,5 +1,3 @@
-require_relative '../myth_buster/definition'
-
 module Definitions
   class SomeOtherMythBuster < MythBuster::Definition
     define "Some other myth buster" do

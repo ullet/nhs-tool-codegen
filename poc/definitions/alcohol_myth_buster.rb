@@ -1,5 +1,3 @@
-require_relative '../myth_buster/definition'
-
 module Definitions
   class AlcoholMythBuster < MythBuster::Definition
     define 'Alcohol myth buster' do

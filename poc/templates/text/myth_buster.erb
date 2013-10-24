@@ -1,0 +1,18 @@
+MYTH BUSTER:
+  TITLE: <%= _title %><% if _introduction? %>
+  INTRODUCTION:
+    TEXT: <%= _introduction._text %>
+    IMAGE: <%= _introduction._image %>
+    START_BUTTON_TEXT: <%= _introduction._start_button_text %><% end %><% if _related_links? %>
+  MORE_INFORMATION:
+    TEXT: <%= _related_links._text %><% if _related_links._links? %>
+    LINKS:<% _related_links._links.each do |link| %>
+      LINK:
+        URL: <%= link._url %>
+        TEXT: <%= link._url %><% end %><% end %><% end %><% if _questions? %>
+  QUESTIONS:<% _questions.each do |question| %>
+    QUESTION:
+      STATEMENT: <%= question._statement %>
+      ANSWER: <%= question._correct_answer %>
+      EXPLANATION: <%= question._explanation %><% end %><% end %>
+

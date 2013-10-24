@@ -1,10 +1,7 @@
-require_relative 'component'
-require_relative 'link'
-
 module MythBuster
   class RelatedLinks < Component
     def text(value)
-      data[:text] = value
+      data[:text] = strip_lines value
     end
 
     def link(&block)

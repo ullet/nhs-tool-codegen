@@ -1,9 +1,7 @@
-require_relative 'component'
-
 module MythBuster
   class Question < Component
     def statement(value)
-      data[:statement] = value
+      data[:statement] = strip_lines value
     end
 
     def answer(value)
@@ -11,7 +9,7 @@ module MythBuster
     end
 
     def explanation(value)
-      data[:explanation] = value
+      data[:explanation] = strip_lines value
     end
   end
 end

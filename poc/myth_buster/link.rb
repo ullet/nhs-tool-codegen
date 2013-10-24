@@ -1,5 +1,3 @@
-require_relative 'component'
-
 module MythBuster
   class Link < Component
     def url(value)
