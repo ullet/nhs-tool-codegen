@@ -1,9 +1,7 @@
-require 'erb'
 require_relative 'myth_buster'
-require_relative 'definitions'
 
-template = File.read 'templates/text/myth_buster.erb'
+# example usage: ruby generate.rb definitions ~
 
-MythBuster.definitions.each do |d|
-  puts ERB.new(template).result(d.get_binding)
+module MythBuster
+  Generator.new(ARGV[0], ARGV[1], Text::Rendering).generate
 end

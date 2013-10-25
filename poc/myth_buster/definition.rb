@@ -1,14 +1,13 @@
 module MythBuster
   class Definition < Component
-    attr_reader :title, :intro
+    attr_reader :title
 
-    def self.define(title, &block)
-      MythBuster.add_definition Definition.new title, &block
+    def initialize(definition_path = nil)
+      instance_eval(File.read definition_path) if (File.file? definition_path)
     end
 
-    def initialize(title, &block)
-      data[:title] = title
-      super &block
+    def title(value)
+      data[:title] = value
     end
 
     def introduction(&block)
