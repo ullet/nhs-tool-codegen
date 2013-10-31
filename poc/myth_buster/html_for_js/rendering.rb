@@ -1,14 +1,14 @@
 module MythBuster
-  module Text
+  module HtmlForJs
     class Rendering < MythBuster::Rendering
       def output_extension
-        'txt'
+        'html'
       end
 
       protected
 
       def output_type
-        'text'
+        'html_for_js'
       end
     end
   end

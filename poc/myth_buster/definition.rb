@@ -19,7 +19,7 @@ module MythBuster
     end
 
     def question(&block)
-      data[:questions] = [] unless data[:questions]
+      data[:questions] = Questions.new unless data[:questions]
       data[:questions] << Question.new(&block)
     end
 

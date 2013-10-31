@@ -4,11 +4,25 @@
     <title>[A Myth Buster]</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="jquery.querystring.js"></script>
     <script type="text/javascript" src="mbdef.js"></script>
     <script type="text/javascript">
-      var content = $('<div></div>').load('mbdef.html');
+      var myth_buster = $.QueryString['mb'];
+      var content = $('<div></div>')
+      if (myth_buster) {
+        content.load(myth_buster.toLowerCase() + '_myth_buster.html');
+      }
 
-      $(document).ready(intro);
+      $(document).ready(initialize);
+
+      function initialize() {
+        setTitle();
+        intro();
+      }
+
+      function setTitle() {
+        document.title = content.find('.meta .title').text();
+      }
 
       function intro() {
         setContent(content.find('.intro'));

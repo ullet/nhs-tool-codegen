@@ -14,6 +14,10 @@ module MythBuster
       @text ||= ERB.new(template).result(content.get_binding)
     end
 
+    def output_extension
+      ''
+    end
+
     protected
 
     def template_path
