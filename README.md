@@ -20,3 +20,7 @@ generated) JavaScript/jQuery to create the complete interactive quiz.
 For the first iteration, the NHS Choices ["Alcohol"](http://www.nhs.uk/Tools/Pages/alcohol-myths.aspx?Tag=Myth+busters)
 and ["Food allergy"](http://www.nhs.uk/Tools/Pages/Food-allergy-myth-buster.aspx?Tag=Myth+busters) myth busters will be 
 used as the basis, with the aim of creating a JavaScript version with comparable functionality, albeit not so pretty.
+
+***
+
+For more details see the [project wiki](https://github.com/ullet/nhs-tool-codegen/wiki).
