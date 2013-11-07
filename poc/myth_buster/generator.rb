@@ -25,7 +25,7 @@ module MythBuster
     end
 
     def load_definitions
-      definition_paths.map { |p| Definition.new p }
+      definition_paths.map { |p| Builder::Definition.new(p).built }
     end
 
     def definition_paths

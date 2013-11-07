@@ -6,6 +6,7 @@ module MythBuster
     end
 
     def save
+      puts "-> #{out_path}"
       File.open(out_path, 'w') { |file| file.puts content.text }
     end
 

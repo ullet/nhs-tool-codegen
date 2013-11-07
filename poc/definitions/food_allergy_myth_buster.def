@@ -1,0 +1,339 @@
+title 'Food allergy and intolerance myth buster'
+
+introduction do
+  text <<-eos
+    There is much in the media about food allergies and intolerances,
+    but what is the difference? And more importantly, how accurate is
+    the information we read? Here we sort fact from fiction.
+  eos
+
+  image 'images/myth-buster/allergy/intro.jpg'
+
+  start_button_text 'Do you know the facts?'
+end
+
+more_information do
+  text <<-eos
+    For further information about food allergy and intolerance, try
+    the following useful links:
+  eos
+
+  link {
+    text 'Health A-Z: Food allergies'
+    url 'http://www.nhs.uk/Conditions/Allergies/Pages/Introduction.aspx' }
+
+  link {
+    text 'Getting tested for allergies'
+    url 'http://www.nhs.uk/Livewell/Allergies/Pages/Whichallergytest.aspx' }
+
+  link {
+    text 'Is it a food allergy or intolerance?'
+    url 'http://www.nhs.uk/Livewell/Allergies/Pages/Foodallergy.aspx' }
+
+  link {
+    text 'Health A-Z: hay fever'
+    url 'http://www.nhs.uk/conditions/Hay-fever/Pages/Introduction.aspx' }
+end
+
+question do
+  statement <<-eos
+    A food intolerance is just a less severe type of allergy
+  eos
+
+  answer false
+
+  explanation <<-eos
+    Food allergy and food intolerance are quite different things. A
+    food allergy is a reaction produced by the body’s immune system
+    when it encounters a normally harmless substance. This tends to
+    happen relatively quickly, sometimes within minutes, but more
+    likely within 1-2 hours. An intolerance does not usually involve
+    the immune system and is when a foodstuff (such as lactose)
+    causes an unpleasant reaction (such as diarrhoea) and effects are
+    rarely immediate. People who have allergies will have a bad
+    reaction even if they come into contact with a very small amount
+    of the foodstuff they are allergic to, whereas those with an
+    intolerance may still be able to eat that foodstuff in small
+    quantities.
+  eos
+end
+
+question do
+  statement <<-eos
+    If you think you have an allergy or intolerance to a certain
+    food, you should cut it out of your diet
+  eos
+
+  answer false
+
+  explanation <<-eos
+    Don't cut food groups out of your diet without medical advice,
+    because you could miss out on important nutrients. Consult your
+    GP first, who can refer you for tests to diagnose your symptoms
+    if appropriate.
+  eos
+end
+
+question do
+  statement <<-eos
+    Levels of food allergy are rising
+  eos
+
+  answer true
+
+  explanation <<-eos
+    It is thought that allergies to food are rising. For instance,
+    the number of children admitted to hospital for food-related
+    anaphylaxis has risen by 700% since 1990. Food allergy is thought
+    to affect 5-8% of young children and 3-4% of adults. It is not
+    known why allergies are rising, but theories include changes in
+    diet and improved levels of hygiene, which leave children’s
+    immune systems underexposed to germs.
+  eos
+end
+
+question do
+  statement <<-eos
+    Most children grow out of their allergy to eggs, milk, wheat and
+    soya
+  eos
+
+  answer true
+
+  explanation <<-eos
+    It is true that most children will grow out of their allergy to
+    eggs, milk, wheat and soya – generally by about the age of five.
+    It is thought to be as a result of the gut maturing or a change
+    in the immune system’s response to that food.
+  eos
+end
+
+question do
+  statement <<-eos
+    Most people will grow out of allergies to peanuts, seafood, fish
+    and tree nuts
+  eos
+
+  answer false
+
+  explanation <<-eos
+    An allergy to peanuts, seafood, fish and tree nuts is very rarely
+    lost.
+  eos
+end
+
+question do
+  statement <<-eos
+    You can be allergic to any foodstuff
+  eos
+
+  answer true
+
+  explanation <<-eos
+    This is true in theory, but in fact just a handful of foods are
+    to blame for 90% of allergic reactions to food in the UK. They
+    are: celery, cereals containing gluten (including wheat, rye,
+    barley and oats), crustaceans (including crabs and prawns), eggs,
+    fish, lupin, milk, molluscs (such as mussels and oysters),
+    mustard, nuts (including brazil nuts, hazelnuts, almonds and
+    walnuts), peanuts (groundnuts or monkey nuts), sesame seeds,
+    soya, sulphur dioxide or sulphites.
+  eos
+end
+
+question do
+  statement <<-eos
+    Symptoms of an allergic reaction will always appear immediately
+    after eating the food that caused it
+  eos
+
+  answer false
+
+  explanation <<-eos
+    It may be that symptoms of an allergic reaction appear
+    immediately, but it can be several hours before they present
+    themselves. It is also the case that symptoms can be more or less
+    severe on different occasions.
+  eos
+end
+
+question do
+  statement <<-eos
+    Food allergies can be fatal
+  eos
+
+  answer true
+
+  explanation <<-eos
+    People with allergies can have a reaction called anaphylaxis (
+    pronounced anna-fill-axis), sometimes called anaphylactic shock.
+    Anaphylaxis can be fatal if it isn't treated immediately, usually
+    with an injection of adrenaline (epinephrine). This is why it's
+    extremely important for someone with an allergy to take their
+    medication with them wherever they go.
+  eos
+end
+
+question do
+  statement <<-eos
+    Some people can be allergic to fruit and vegetables
+  eos
+
+  answer true
+
+  explanation <<-eos
+    This can happen in some people who have hay fever and are
+    sensitive to pollen or in people who are allergic to latex.
+    Symptoms generally include itches or rashes around the mouth and
+    lips, which is why this type of allergy is called oral allergy
+    syndrome. Cooking can destroy the allergens that cause this type
+    of reaction, so a person who has an allergic reaction to raw
+    apples may be able to eat cooked apples. The reverse can also be
+    true, with some cooked vegetables being more allergenic than raw,
+    for example celery or celeriac.
+  eos
+end
+
+question do
+  statement <<-eos
+    A food allergy or intolerance can be easily self-diagnosed
+  eos
+
+  answer false
+
+  explanation <<-eos
+    It is thought that a much higher number of people will believe
+    that their symptoms are being caused by a food allergy or
+    intolerance than is actually the case. Around 30% believe they
+    are allergic or intolerant to one or more foods, but a Food
+    Standards Agency (FSA) report in 2008 estimated that only 5-8% of
+    children and 1-2% of adults have a food allergy. Some researchers
+    believe that the figure for adults may be slightly higher, at
+    around 3-4%. Always consult with your GP first if you are
+    experiencing symptoms.
+  eos
+end
+
+question do
+  statement <<-eos
+    Food allergies or intolerances can be cured
+  eos
+
+  answer false
+
+  explanation <<-eos
+    There is currently no cure for food allergy or intolerances. The
+    only way to prevent a reaction is to avoid the food you are
+    sensitive to. Research is under way to see if desensitisation
+    strategies (as are used for hay fever) can also be applied to
+    food allergies, but this is still at an early stage and should
+    not be attempted without close medical supervision. If you think
+    you may have a food allergy or intolerance, it is important to
+    visit your GP before you start cutting out foods. Many children
+    will grow out of their allergies and intolerances as their bodies
+    and immune systems mature
+  eos
+end
+
+question do
+  statement <<-eos
+    Home test kits are recommended for diagnosing food allergies and
+    intolerances
+  eos
+
+  answer false
+
+  explanation <<-eos
+    The use of commercial allergy testing kits is not recommended.
+    These tests are often of a lower standard than those provided by
+    the NHS or accredited private clinics. Also, allergy tests should
+    be interpreted by a qualified professional who has detailed
+    knowledge of your symptoms and medical history.
+  eos
+end
+
+question do
+  statement <<-eos
+    Allergies and intolerances run in families
+  eos
+
+  answer true
+
+  explanation <<-eos
+    If you have parents or a sibling with an allergic condition, such
+    as eczema, asthma or a food allergy, you are at a higher risk of
+    developing a food allergy or intolerance. However, you may not
+    develop the same allergy.
+  eos
+end
+
+question do
+  statement <<-eos
+    If you have eczema or asthma you are more likely to develop an
+    allergy or intolerance
+  eos
+
+  answer true
+
+  explanation <<-eos
+    Children who are born with other allergic conditions, such as
+    asthma or atopic dermatitis (an allergic skin condition), are
+    more likely to develop a food allergy.
+  eos
+end
+
+question do
+  statement <<-eos
+    You are only required to carry medication if your allergy is very
+    severe
+  eos
+
+  answer false
+
+  explanation <<-eos
+    If you are diagnosed with a food allergy you should carry
+    medication with you at all times, since an allergic reaction can
+    range in severity. Your GP will provide you with two types of
+    medication: antihistamine tablets and/or gels, which can be used
+    to manage the symptoms of a mild to moderate allergic reaction,
+    and adrenaline, which is used to manage the symptoms of
+    anaphylaxis. Adrenaline is normally supplied in a device called
+    an adrenaline auto-injector pen.
+  eos
+end
+
+question do
+  statement <<-eos
+    People who have a food allergy are more likely to develop other food allergies
+  eos
+
+  answer true
+
+  explanation <<-eos
+    This is known as being ‘atopic’ and refers to a tendency to
+    develop allergies. Being atopic can mean you react to a number of
+    unrelated allergens, for example peanuts and cats. Other people
+    can react to different foods that contain either the same
+    allergen or an allergen with a very similar structure, which
+    means they can cause similar allergic reactions. This is known as
+    allergic cross-reactivity. This means that if someone is allergic
+    to peanuts, they might react to other foods in the legume family
+    such as soya, peas, lentils, lupin and beans.
+  eos
+end
+
+question do
+  statement <<-eos
+    If you have a food allergy or intolerance you may have an
+    allergic reaction to cosmetics
+  eos
+
+  answer true
+
+  explanation <<-eos
+    If you have an allergy it is important to train yourself to read
+    labels on everything that comes into contact with your body – not
+    just the food that you eat. For instance, some cosmetics may
+    contain nut oils or extracts of fruit or vegetables.
+  eos
+end

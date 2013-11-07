@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="jquery.querystring.js"></script>
-    <script type="text/javascript" src="mbdef.js"></script>
     <script type="text/javascript">
       var myth_buster = $.QueryString['mb'];
       var content = $('<div></div>')
@@ -27,7 +26,32 @@
       function intro() {
         setContent(content.find('.intro'));
         setStartNav();
-        setMoreInfoNav(-1);
+        setMoreInfoNav(-1, null);
+      }
+
+      function question(index) {
+        setContent(questions().eq(index));
+        setNavForQuestion(index);
+      }
+
+      function answerQuestion(questionIndex, answer) {
+        correct = answer.is($('.correct'));
+        // TODO: replace alert with something less intrusive
+        alert(correct ? correctMessage() : incorrectMessage());
+        explanation(questionIndex);
+      }
+
+      function correctMessage() {
+        return ' :-) ';
+      }
+
+      function incorrectMessage() {
+        return ' :-( ';
+      }
+
+      function explanation(questionIndex) {
+        setContent(explanations().eq(questionIndex));
+        setNavForExplanation(questionIndex)
       }
 
       function setContent(element) {
@@ -42,34 +66,48 @@
         question(0);
       }
 
-      function question(index) {
-        setContent(questions().eq(index));
-        setNav(index);
-      }
-
       function questions() {
         return content.find('.questions .question');
       }
 
-      function setNav(questionIndex) {
+      function explanations() {
+        return content.find('.questions .explanation');
+      }
+
+      function setNavForQuestion(questionIndex) {
+        setSkipNav(questionIndex);
+        setAnswerNav(questionIndex);
+        setMoreInfoNav(questionIndex, question);
+      }
+
+      function setNavForExplanation(questionIndex) {
+        setSkipNav(questionIndex);
+        setMoreInfoNav(questionIndex, explanation);
+      }
+
+      function setSkipNav(questionIndex) {
         if (questionIndex > 0)
-          $('.previous').click(function() { question(questionIndex-1) });
+          $('.previous').click(function() { question(questionIndex-1); });
         if (questionIndex < lastQuestionIndex())
-          $('.next').click(function() { question(questionIndex+1) });
-        // TODO; True and False clicks
-        setMoreInfoNav(questionIndex);
+          $('.next').click(function() { question(questionIndex+1); });
       }
 
-      function setMoreInfoNav(questionIndex) {
-        $('.more-info').click(function() { moreInfo(questionIndex) });
+      function setAnswerNav(questionIndex) {
+        $('.true').click(function() { answerQuestion(questionIndex, $(this)); });
+        $('.false').click(function() { answerQuestion(questionIndex, $(this)); });
       }
 
-      function moreInfo(questionIndex) {
+      function setMoreInfoNav(questionIndex, returnAction) {
+        $('.more-info').click(
+          function() { moreInfo(questionIndex, returnAction) });
+      }
+
+      function moreInfo(questionIndex, returnAction) {
         setContent(content.find('div.more-info'));
         if (questionIndex < 0)
           $('.back').click(intro);
         else
-          $('.back').click(function() { question(questionIndex) });
+          $('.back').click(function() { returnAction(questionIndex) });
       }
 
       function lastQuestionIndex() {

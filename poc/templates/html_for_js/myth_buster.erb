@@ -1,34 +1,54 @@
 <div class="myth-buster">
   <div class="meta">
-    <span class="title"><%= _title %></span>
+    <span class="title"><%= title %></span>
   </div>
   <div class="more-info">
-    <h3><%= _title %></h3>
+    <h3><%= title %></h3>
     <input class="back" type="button" value="&lt;&lt;" title="Back" />
-    <p><%= _related_links._text %></p><% if _related_links._links? %>
-    <ul><% _related_links._links.each do |link| %>
-      <li><a href="<%= link._url %>"><%= link._text %></a></li><% end %>
+    <p><%= related.text %></p><% if related.links? %>
+    <ul><% related.links.each do |link| %>
+      <li><a href="<%= link.url %>"><%= link.text %></a></li><% end %>
     </ul><% end %>
   </div>
   <div class="intro">
-    <h3><%= _title %></h3>
-    <input class="more-info" type="button" value="??" title="More information" />
-    <p><%= _introduction._text %></p>
-    <p><img src="<%= _introduction._image %>" alt="alt text" /></p>
-    <p><input class="start" type="button" value="<%= _introduction._start_button_text %>" /></p>
+    <h3><%= title %></h3>
+    <input class="more-info" type="button" value="( i )" title="More information" />
+    <p><%= introduction.text %></p>
+    <p><img src="<%= introduction.image %>" alt="alt text" /></p>
+    <p><input class="start" type="button" value="<%= introduction.start_button_text %>" /></p>
   </div>
-  <div class="questions"><% _questions.each do |question| %>
+  <div class="questions"><% questions.each do |question| %>
     <div class="question">
-      <h3><%= _title %></h3>
-      <input class="more-info" type="button" value="??" title="More information" />
-      <p>"<%= question._statement %>"</p>
+      <h3><%= title %></h3>
+      <input class="more-info" type="button" value="( i )" title="More information" />
+      <div class="text">
+        <p>"<%= question.statement %>"</p>
+        <p class="counter">Myth <%= question.number %>/<%= questions.size %></p>
+      </div>
       <p>
         <input class="previous" type="button" value="&lt;&lt;"
-        <% if _questions.first? question %> disabled="disabled"<% else %> title="More information" <% end %> />
-        <input class="true<% if question._correct_answer == true %> correct<% end %>" type="button" value="True" />
-        <input class="false<% if question._correct_answer == false %> correct<% end %>" type="button" value="False" />
+        <% if question.first? %> disabled="disabled"<% else %> title="Back to the previous question" <% end %> />
+        <input class="true<% if question.statement_true? %> correct<% end %>" type="button" value="True" />
+        <input class="false<% if question.statement_false? %> correct<% end %>" type="button" value="False" />
         <input class="next" type="button" value="&gt;&gt;"
-        <% if _questions.last? question %> disabled="disabled"<% else %> title="Skip to next question" <% end %> />
+        <% if question.last? %> disabled="disabled"<% else %> title="Skip to the next question" <% end %> />
+      </p>
+    </div>
+    <div class="explanation">
+      <h3><%= title %></h3>
+      <input class="more-info" type="button" value="( i )" title="More information" />
+      <div class="text">
+        <h4>The truth is...</h4>
+        <p><%= question.explanation %></p>
+        <p class="counter">Myth <%= question.number %>/<%= questions.size %></p>
+      </div>
+      <p>
+        <input class="previous" type="button" value="&lt;&lt;"
+        <% if question.first? %> disabled="disabled"<% else %> title="Back to the previous question" <% end %> />
+        <input disabled="disabled" type="button" value="True" />
+        <input disabled="disabled" type="button" value="False" />
+        <input class="next" type="button" value="&gt;&gt;"
+        <% if question.last? %> disabled="disabled"<% else %> title="Go to the next question" <% end %> />
       </p>
     </div><% end %>
   </div>

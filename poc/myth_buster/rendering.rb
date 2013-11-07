@@ -7,7 +7,7 @@ module MythBuster
     end
 
     def title
-      content._title
+      content.title
     end
 
     def text

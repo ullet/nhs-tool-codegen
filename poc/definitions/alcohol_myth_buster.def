@@ -2,19 +2,20 @@ title 'Alcohol myth buster'
 
 introduction do
   text <<-eos
-    There are so many stories around alcohol and drinking that it’s hard
-    to know what to believe. Being informed about the facts is the best way
-    to make sure that you drink safely.
+    There are so many stories around alcohol and drinking that it’s
+    hard to know what to believe. Being informed about the facts is
+    the best way to make sure that you drink safely.
   eos
 
-  image '/images/mythbuster/alcohol/intro.png'
+  image 'images/myth-buster/alcohol/intro.jpg'
 
   start_button_text 'Do you know the facts?'
 end
 
 more_information do
   text <<-eos
-    For further information about alchol-related issues try the following:
+    For further information about alchol-related issues try the
+    following:
   eos
 
   link {
@@ -22,8 +23,16 @@ more_information do
     url 'http://www.nhs.uk/Tools/Pages/Alcoholcalculator.aspx' }
 
   link {
+    text 'Download the drinks tracker'
+    url 'http://www.nhs.uk/Tools/Pages/iphonedrinks.aspx' }
+
+  link {
     text 'Find out about the effects of alcohol'
     url 'http://www.nhs.uk/Livewell/alcohol/Pages/Effectsofalcohol.aspx' }
+
+  link {
+    text 'Get alcohol-related services near you'
+    url 'http://www.nhs.uk/Livewell/alcohol/Pages/Tipsoncuttingdown.aspx' }
 end
 
 question do
@@ -34,11 +43,12 @@ question do
   answer false
 
   explanation <<-eos
-    Men have a higher average total body water content than women (62%
-    compared to 52% ), meaning men are better able to dilute alcohol than
-    women. Other factors have also been reported that can make women more
-    sensitive to alcohol, such as enzyme differences. All these factors mean
-    that women are more at risk than men from the same level of drinking.
+    Men have a higher average total body water content than women
+    (62% compared to 52%), meaning men are better able to dilute
+    alcohol than women. Other factors have also been reported that can
+    make women more sensitive to alcohol, such as enzyme differences.
+    All these factors mean that women are more at risk than men from
+    the same level of drinking.
   eos
 end
 
@@ -50,9 +60,164 @@ question do
   answer true
 
   explanation <<-eos
-    While food and water may ease some of the symptoms, they won't cure a
-    hangover. The best way to avoid one is to moderate your drinking and
-    have water between alcoholic drinks. Remember that water won't make you
-    any less drunk or protect your liver.
+    While food and water may ease some of the symptoms, they won't cure
+    a hangover. The best way to avoid one is to moderate your drinking
+    and have water between alcoholic drinks. Remember that water won't
+    make you any less drunk or protect your liver.
+  eos
+end
+
+question do
+  statement <<-eos
+    A cold shower, fresh air or hot coffee will sober someone up.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    You might feel less sleepy, but only time will get alcohol out of
+    your body. Depending on your weight, it takes about one hour to
+    process one unit of alcohol.
+  eos
+end
+
+question do
+  statement <<-eos
+    Alcohol is fattening.
+  eos
+
+  answer true
+
+  explanation <<-eos
+    There can be almost 200 calories in a large glass of red wine. And
+    any sugar in mixers or cocktails comes on top of the alcohol
+    content of the spirits. Alcohol also reduces our self-control,
+    making it easy to eat too much.
+  eos
+end
+
+question do
+  statement <<-eos
+    Alcohol is a stimulant.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    Alcohol is actually a depressant.  Initially, you may feel more
+    energetic or cheerful because alcohol depresses your inhibitions.
+    However, that means you can also be less able to control your
+    emotions or reactions.
+  eos
+end
+
+question do
+  statement <<-eos
+    Beer gets you less drunk.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    An average pint of beer (ABV 5%), large glass of wine (250ml,
+    ABV 11%) or a ‘large’ double vodka (70ml, ABV 38 to 40%) all have
+    around 2.8 units of alcohol. This is what makes you drunk
+    chemically, and the faster you drink the full 2.8 units, the higher
+    your peak blood level. But there are a wide range of factors that
+    can affect how drunk you feel including your expectations.
+  eos
+end
+
+question do
+  statement <<-eos
+    Lining your stomach with a big meal before drink can help to reduce
+    the risk of getting drunk.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    Drinking on a full stomach before you go out will delay alcohol
+    getting into your system, not prevent it. A meal will only delay
+    the rate of alcohol absorption, but if you go on to drink heavily
+    you will get drunk. However, it's still best to eat a proper meal
+    before a night out, especially foods rich in carbohydrates and
+    proteins.
+  eos
+end
+
+question do
+  statement <<-eos
+    Switching between beer, wine, and spirits will make you more drunk.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    Your blood alcohol content is what determines how drunk you are.
+    Mixing drinks may make you sicker by upsetting your stomach, but
+    not more intoxicated.
+  eos
+end
+
+question do
+  statement <<-eos
+    Your body develops a tolerance to alcohol, so you can safely drink
+    more.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    The more you drink the more damage your body will sustain and the
+    greater the risks become. Tolerance can actually be seen as a
+    warning sign that your body has started to be affected by alcohol.
+  eos
+end
+
+question do
+  statement <<-eos
+    Drinking more than a glass of wine a day may reduce your chances of
+    getting pregnant.
+  eos
+
+  answer true
+
+  explanation <<-eos
+    Women who drink a lot find it more difficult to conceive. A study
+    reported by the British Medical Journal found that as few as five
+    drinks every week may decrease a woman's chance of becoming
+    pregnant. If you want to conceive, it's probably best to avoid
+    alcohol completely.
+  eos
+end
+
+question do
+  statement <<-eos
+    White wine is a good choice for a person who wants a light drink
+    with less alcohol.
+  eos
+
+  answer false
+
+  explanation <<-eos
+    A glass of white or red wine, a bottle of beer and a shot of
+    whiskey or other distilled spirits can all contain equivalent
+    amounts of alcohol, depending on actual drink size and strength
+    and will give similar readings on a breathalyzer.
+  eos
+end
+
+question do
+  statement <<-eos
+    Drinking too much alcohol can reduce male fertility.
+  eos
+
+  answer true
+
+  explanation <<-eos
+    Alcohol decreases fertility by its effect on sperm quality and
+    quantity. Men trying for a family may want to consider reducing
+    their overall alcohol consumption.
   eos
 end
