@@ -26,21 +26,6 @@ function question(index) {
   setNavForQuestion(index);
 }
 
-function answerQuestion(questionIndex, answer) {
-  correct = answer.is($('.correct'));
-  // TODO: replace alert with something less intrusive
-  alert(correct ? correctMessage() : incorrectMessage());
-  explanation(questionIndex);
-}
-
-function correctMessage() {
-  return ' :-) ';
-}
-
-function incorrectMessage() {
-  return ' :-( ';
-}
-
 function explanation(questionIndex) {
   setContent(explanations().eq(questionIndex));
   setNavForExplanation(questionIndex)
@@ -54,22 +39,23 @@ function setStartNav() {
   $('.start').click(start);
 }
 
-function start() {
-  question(0);
+function setMoreInfoNav(questionIndex, returnAction) {
+  $('.more-info').click(
+    function() { moreInfo(questionIndex, returnAction) });
 }
 
 function questions() {
   return content.find('.questions .question');
 }
 
-function explanations() {
-  return content.find('.questions .explanation');
-}
-
 function setNavForQuestion(questionIndex) {
   setSkipNav(questionIndex);
   setAnswerNav(questionIndex);
   setMoreInfoNav(questionIndex, question);
+}
+
+function explanations() {
+  return content.find('.questions .explanation');
 }
 
 function setNavForExplanation(questionIndex) {
@@ -89,9 +75,8 @@ function setAnswerNav(questionIndex) {
   $('.false').click(function() { answerQuestion(questionIndex, $(this)); });
 }
 
-function setMoreInfoNav(questionIndex, returnAction) {
-  $('.more-info').click(
-    function() { moreInfo(questionIndex, returnAction) });
+function start() {
+  question(0);
 }
 
 function moreInfo(questionIndex, returnAction) {
@@ -100,6 +85,21 @@ function moreInfo(questionIndex, returnAction) {
     $('.back').click(intro);
   else
     $('.back').click(function() { returnAction(questionIndex) });
+}
+
+function answerQuestion(questionIndex, answer) {
+  correct = answer.is($('.correct'));
+  // TODO: replace alert with something less intrusive
+  alert(correct ? correctMessage() : incorrectMessage());
+  explanation(questionIndex);
+}
+
+function correctMessage() {
+  return ' :-) ';
+}
+
+function incorrectMessage() {
+  return ' :-( ';
 }
 
 function lastQuestionIndex() {
