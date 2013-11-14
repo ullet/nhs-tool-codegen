@@ -12,14 +12,6 @@ module MythBuster
       def start_button_text(value)
         data[:start_button_text] = value
       end
-
-      def to_hash
-        {
-          text:              data[:text],
-          image:             data[:image],
-          start_button_text: data[:start_button_text]
-        }
-      end
     end
   end
 end

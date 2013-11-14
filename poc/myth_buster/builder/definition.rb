@@ -25,22 +25,7 @@ module MythBuster
 
       def question(&block)
         data[:questions] = Questions.new unless data[:questions]
-        data[:questions] << Question.new(&block)
-      end
-
-      def to_hash
-        {
-          title:        data[:title],
-          introduction: data[:introduction].to_hash,
-          related:      data[:related].to_hash,
-          questions:    data[:questions].map do |q|
-            qh = q.to_hash
-            qh[:first] = data[:questions].first? q
-            qh[:last] = data[:questions].last? q
-            qh[:number] = data[:questions].number q
-            qh
-          end
-        }
+        data[:questions] << Question.new(data[:questions], &block)
       end
     end
   end

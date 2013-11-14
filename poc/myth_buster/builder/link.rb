@@ -8,10 +8,6 @@ module MythBuster
       def text(value)
         data[:text] = value
       end
-
-      def to_hash
-        { text: data[:text], url: data[:url] }
-      end
     end
   end
 end
