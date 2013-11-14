@@ -7,7 +7,9 @@ introduction do
     the best way to make sure that you drink safely.
   eos
 
-  image 'images/myth-buster/alcohol/intro.jpg'
+  image {
+    url 'images/myth-buster/alcohol/intro.jpg'
+    alt_text 'intro' }
 
   start_button_text 'Do you know the facts?'
 end

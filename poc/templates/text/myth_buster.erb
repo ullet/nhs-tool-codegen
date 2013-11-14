@@ -2,7 +2,7 @@ MYTH BUSTER:
   TITLE: <%= title %><% if introduction? %>
   INTRODUCTION:
     TEXT: <%= introduction.text %>
-    IMAGE: <%= introduction.image %>
+    IMAGE: <%= introduction.image.url %>
     START_BUTTON_TEXT: <%= introduction.start_button_text %><% end %><% if related.links? %>
   MORE_INFORMATION:
     TEXT: <%= related.text %><% if related.links? %>

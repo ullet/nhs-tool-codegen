@@ -7,7 +7,9 @@ introduction do
     the information we read? Here we sort fact from fiction.
   eos
 
-  image 'images/myth-buster/allergy/intro.jpg'
+  image {
+    url 'images/myth-buster/allergy/intro.jpg'
+    alt_text 'intro' }
 
   start_button_text 'Do you know the facts?'
 end

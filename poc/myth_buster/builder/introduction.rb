@@ -5,8 +5,8 @@ module MythBuster
         data[:text] = strip_lines value
       end
 
-      def image(value)
-        data[:image] = value
+      def image(&block)
+        data[:image] = Image.new &block
       end
 
       def start_button_text(value)

@@ -4,7 +4,7 @@ module MythBuster
       include Id::Model
 
       field :text
-      field :image
+      has_one :image
       field :start_button_text
     end
   end

@@ -14,7 +14,7 @@
     <h3><%= title %></h3>
     <input class="more-info" type="button" value="( i )" title="More information" />
     <p><%= introduction.text %></p>
-    <p><img src="<%= introduction.image %>" alt="alt text" /></p>
+    <p><img src="<%= introduction.image.url %>" alt="<%= introduction.image.alt_text %>" /></p>
     <p><input class="start" type="button" value="<%= introduction.start_button_text %>" /></p>
   </div>
   <div class="questions"><% questions.each do |question| %>
