@@ -2,6 +2,16 @@ require 'erb'
 
 module MythBuster
   class Rendering
+    class << self
+      attr_accessor :rendering_type
+    end
+
+    def self.type(rendering_type)
+      rendering_class = Class.new(Rendering)
+      rendering_class.rendering_type = rendering_type
+      rendering_class
+    end
+
     def initialize(content)
       @content = content
     end
@@ -14,18 +24,14 @@ module MythBuster
       @text ||= ERB.new(template).result(content.get_binding)
     end
 
-    def output_extension
-      ''
-    end
-
     protected
 
     def template_path
-      "templates/#{output_type}/myth_buster.erb"
+      "templates/#{rendering_type}/myth_buster.erb"
     end
 
-    def output_type
-      ''
+    def rendering_type
+      self.class.rendering_type || ''
     end
 
     private

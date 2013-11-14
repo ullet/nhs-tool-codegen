@@ -1,18 +1,17 @@
 MYTH BUSTER:
-  TITLE: <%= _title %><% if _introduction? %>
+  TITLE: <%= title %><% if introduction? %>
   INTRODUCTION:
-    TEXT: <%= _introduction._text %>
-    IMAGE: <%= _introduction._image %>
-    START_BUTTON_TEXT: <%= _introduction._start_button_text %><% end %><% if _related_links? %>
+    TEXT: <%= introduction.text %>
+    IMAGE: <%= introduction.image %>
+    START_BUTTON_TEXT: <%= introduction.start_button_text %><% end %><% if related.links? %>
   MORE_INFORMATION:
-    TEXT: <%= _related_links._text %><% if _related_links._links? %>
-    LINKS:<% _related_links._links.each do |link| %>
+    TEXT: <%= related.text %><% if related.links? %>
+    LINKS:<% related.links.each do |link| %>
       LINK:
-        URL: <%= link._url %>
-        TEXT: <%= link._url %><% end %><% end %><% end %><% if _questions? %>
-  QUESTIONS:<% _questions.each do |question| %>
+        URL: <%= link.url %>
+        TEXT: <%= link.url %><% end %><% end %><% end %><% if questions? %>
+  QUESTIONS:<% questions.each do |question| %>
     QUESTION:
-      STATEMENT: <%= question._statement %>
-      ANSWER: <%= question._correct_answer %>
-      EXPLANATION: <%= question._explanation %><% end %><% end %>
-
+      STATEMENT: <%= question.statement %>
+      ANSWER: <%= question.statement_true? %>
+      EXPLANATION: <%= question.explanation %><% end %><% end %>
