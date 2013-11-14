@@ -4,12 +4,12 @@ module MythBuster
   class Rendering
     class << self
       attr_accessor :rendering_type
-    end
 
-    def self.type(rendering_type)
-      rendering_class = Class.new(Rendering)
-      rendering_class.rendering_type = rendering_type
-      rendering_class
+      def type(rendering_type)
+        rendering_class = Class.new(Rendering)
+        rendering_class.rendering_type = rendering_type
+        rendering_class
+      end
     end
 
     def initialize(content)

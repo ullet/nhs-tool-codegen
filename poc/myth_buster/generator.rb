@@ -1,10 +1,10 @@
 module MythBuster
   class Generator
-    def initialize(definitions_dir, out_dir, rendering, output_extension = '')
+    def initialize(definitions_dir, out_dir, rendering, rendering_writer)
       @defs_dir = definitions_dir
       @out_dir = out_dir
       @rendering = rendering
-      @output_extension = output_extension
+      @rendering_writer = rendering_writer
     end
 
     def generate
@@ -13,12 +13,10 @@ module MythBuster
 
     private
 
-    attr_reader :defs_dir, :out_dir, :rendering, :output_extension
+    attr_reader :defs_dir, :out_dir, :rendering, :rendering_writer
 
     def renderings
-      definitions.map do |d|
-        RenderingWriter.new(rendering.new(d), out_dir, output_extension)
-      end
+      definitions.map { |d| rendering_writer.new(rendering.new(d), out_dir) }
     end
 
     def definitions

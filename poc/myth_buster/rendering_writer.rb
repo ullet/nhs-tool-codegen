@@ -1,9 +1,18 @@
 module MythBuster
   class RenderingWriter
-    def initialize(content, out_dir, output_extension = '')
+    class << self
+      attr_accessor :output_type
+
+      def type(output_type)
+        writer_class = Class.new(RenderingWriter)
+        writer_class.output_type = output_type
+        writer_class
+      end
+    end
+
+    def initialize(content, out_dir)
       @content = content
       @out_dir = out_dir
-      @output_extension = output_extension
     end
 
     def save
@@ -13,7 +22,7 @@ module MythBuster
 
     private
 
-    attr_reader :content, :out_dir, :output_extension
+    attr_reader :content, :out_dir
 
     def out_path
       File.join(out_dir, out_file_name)
@@ -24,7 +33,7 @@ module MythBuster
     end
 
     def dot_extension
-      output_extension.empty? ? '' : ".#{output_extension}"
+      self.class.output_type.empty? ? '' : ".#{self.class.output_type}"
     end
   end
 end
