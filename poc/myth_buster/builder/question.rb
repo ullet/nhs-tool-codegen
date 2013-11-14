@@ -19,12 +19,17 @@ module MythBuster
         data[:explanation] = strip_lines value
       end
 
-      def to_hash
-        h = super
-        h[:first] = questions.first? self
-        h[:last] = questions.last? self
-        h[:number] = questions.number self
-        h
+      def[](key)
+        case key
+        when :first
+          questions.first? self
+        when :last
+          questions.last? self
+        when :number
+          questions.number self
+        else
+          super key
+        end
       end
 
       attr_reader :questions

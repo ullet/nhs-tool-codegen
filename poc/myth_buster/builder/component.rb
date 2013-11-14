@@ -20,24 +20,6 @@ module MythBuster
         str.each_line { |l| lines << "#{l.strip}" }
         lines.join "\n"
       end
-
-      def to_hash
-        Hash[data.map { |k, v| [k, value_for_hash(v)] }]
-      end
-
-      private
-
-      def value_for_hash(obj)
-        if obj.respond_to? :to_hash
-          obj.to_hash
-        elsif obj.kind_of? Array
-          obj.map { |o| value_for_hash(o) }
-        elsif obj.kind_of? Hash
-          Hash[obj.map { |k, v| [k, value_for_hash(v)] }]
-        else
-          obj
-        end
-      end
     end
   end
 end

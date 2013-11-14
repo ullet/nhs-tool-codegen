@@ -8,7 +8,7 @@ module MythBuster
       end
 
       def built
-        Model::Definition.new(self.to_hash)
+        Model::Definition.new(self)
       end
 
       def title(value)
